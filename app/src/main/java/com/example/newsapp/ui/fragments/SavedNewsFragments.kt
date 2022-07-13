@@ -10,15 +10,21 @@ import com.example.newsapp.R
 import com.example.newsapp.databinding.FragmentBreakingNewsBinding
 import com.example.newsapp.databinding.FragmentSavedNewsBinding
 
-class SavedNewsFragments: Fragment(R.layout.fragment_saved_news) {
+class SavedNewsFragments: Fragment() {
     private var _binding: FragmentSavedNewsBinding? = null
     private val binding : FragmentSavedNewsBinding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.i("TAG", "onCreate: Here")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.i("TAG", "onCreateView: Here")
         _binding = FragmentSavedNewsBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
